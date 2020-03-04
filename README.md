@@ -7,7 +7,7 @@ You have been contracted by Coo Coo Computing Challengers to take a concept, Cli
 
 ## The Application Requirements
 - [ ] You must create a website that tracks the amount of times the clicking button has been clicked.
-    - [ ] Create a button in the browser to click.
+    - [X] Create a button in the browser to click.
     - [ ] Create a section on the page that interacts with the _'Clicking Companions'_.
       - [ ] Displays the amount of _Clicking Companions_ purchased.
       - [ ] Provides a button to purchase _Clicking Companions_.
