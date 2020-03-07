@@ -1,4 +1,5 @@
 const clickCounter = new ClickCounter();
+
 const clickButton = document.querySelector(".clickButton");
 const clickCompanionButton = document.querySelector(".clickCompanionButton");
 const clickCompounderButton = document.querySelector(".clickCompounderButton");
@@ -15,5 +16,30 @@ const updateClickCompanionCount = (displayedClickCompanionCount, clickCounter)=>
 }
 
 const updateClickCompounderCount = (displayedClickCompounderCount, clickCounter)=>{
-    displayedClickCompounderCount.innerText = "Click Compounder Count: " + clickCounter.getCompouderClickCount();
+    displayedClickCompounderCount.innerText = "Click Compounder Count: " + clickCounter.getCompounderClickCount();
 }
+
+const makeButtonIntoClickCounter = (clickButton, clickCounter, displayedClickCount)=>{
+    clickButton.addEventListener('click', ()=> {
+        clickCounter.click();
+        updateClickCount(displayedClickCount, clickCounter);
+    })
+}
+
+const compounderButtonBuysCompounder = (clickCompounderButton, clickCounter, displayedClickCompounderCount) => {
+    clickCompounderButton.addEventListener('click', ()=> {
+        clickCounter.buyClickCompounder();
+        updateClickCompounderCount(displayedClickCompounderCount, clickCounter);
+    })
+}
+
+const companionButtonBuysCompanionClicker = (clickCompanionButton, clickCounter, displayedClickCompanionCount)=> {
+    clickCompanionButton.addEventListener('click', ()=>{
+        clickCounter.buyCompanionClicker();
+        updateClickCompanionCount(displayedClickCompanionCount, clickCounter);
+    })
+}
+
+makeButtonIntoClickCounter(clickButton, clickCounter, displayedClickCount);
+compounderButtonBuysCompounder(clickCompounderButton, clickCounter, displayedClickCompounderCount);
+companionButtonBuysCompanionClicker(clickCompanionButton, clickCounter, displayedClickCompanionCount);
