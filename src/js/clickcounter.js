@@ -2,7 +2,10 @@ class ClickCounter{
     constructor(){
         this.clickCount = 0;
         this.companionClickCount = 0;
+        this.compounderClickCount = 0;
         this.companionCost = 100;
+        this.compounderCost = 10;
+        this.clickValue = 1;
     }
 
     click(){
@@ -41,6 +44,39 @@ class ClickCounter{
     }
 
     companionIncreasesClickCount(){
-        
+        this.clickCount += this.companionClickCount;
+    }
+
+    getCompounderClickCount(){
+        return this.compounderClickCount;
+    }
+
+    buyClickCompounder(){
+        if(this.clickCount >= 10){
+            this.compounderClickCount++;
+            this.subtractCompounderCost();
+            this.increaseCompounderCost();
+            this.clickValue = 1.2;
+        }
+    }
+
+    subtractCompounderCost(){
+        this.clickCount -= 10;
+    }
+
+    increaseCompounderCost(){
+        this.compounderCost *= 1.1;
+    }
+
+    getCompounderCost(){
+        return Math.floor(this.compounderCost);
+    }
+
+    compounderIncreasesClickValue(){
+            this.clickValue = Math.pow(1.2, this.getCompounderClickCount());
+    }
+
+    getClickValue(){
+        return this.clickValue;
     }
 }
