@@ -9,14 +9,14 @@ class ClickCounter{
     }
 
     click(){
-        this.clickCount++;
+        this.clickCount += this.clickValue;
     }
 
     getClickCount(){
         if(this.clickCount < 0){
            return this.clickCount = 0;
         }else{
-        return this.clickCount;}
+        return this.clickCount.toFixed(2);}
     }
 
     getCompanionClickCount(){
@@ -73,7 +73,7 @@ class ClickCounter{
     }
 
     compounderIncreasesClickValue(){
-            this.clickValue = Math.pow(1.2, this.getCompounderClickCount());
+            this.clickValue = 1 * Math.pow(1.2, this.getCompounderClickCount());
     }
 
     getClickValue(){
