@@ -6,9 +6,22 @@ const clickCompounderButton = document.querySelector(".clickCompounderButton");
 const displayedClickCount = document.querySelector(".clickCount");
 const displayedClickCompanionCount = document.querySelector(".clickCompanionCount");
 const displayedClickCompounderCount = document.querySelector(".clickCompounderCount");
+const displayedCompanionCost = document.querySelector(".companionCost");
+const displayedCompounderCost = document.querySelector(".compounderCost");
+
+
+//this shit ain't working, please revisit************
+//is there a way to access clickCount variable another way?...
+const enableCompounderButton = (clickCompounderButton, clickCounter) =>{
+    if(clickCounter.getClickCount() < 10){
+        clickCompounderButton.disabled = true;
+    }else{
+        clickCompounderButton.disabled = false;
+    }
+}
 
 const updateClickCount = (displayedClickCount, clickCounter)=>{
-    displayedClickCount.innerText = "Clicks: " + clickCounter.getClickCount();
+    displayedClickCount.innerText = "Score: " + clickCounter.getClickCount();
 }
 
 const updateClickCompanionCount = (displayedClickCompanionCount, clickCounter)=> {
@@ -19,6 +32,14 @@ const updateClickCompounderCount = (displayedClickCompounderCount, clickCounter)
     displayedClickCompounderCount.innerText = "Click Compounder Count: " + clickCounter.getCompounderClickCount();
 }
 
+const updateClickCompanionCost = (displayedCompanionCost, clickCounter) =>{
+    displayedCompanionCost.innerText = "You can buy a clicking companion for " + clickCounter.getCompanionCost() + " clicks."
+}
+
+const updateClickCompounderCost = (displayedCompounderCost, clickCounter) =>{
+    displayedCompounderCost.innerText = "You can buy a click compounder for " +  clickCounter.getCompounderCost() + " clicks."
+}
+
 const makeButtonIntoClickCounter = (clickButton, clickCounter, displayedClickCount)=>{
     clickButton.addEventListener('click', ()=> {
         clickCounter.click();
@@ -26,20 +47,30 @@ const makeButtonIntoClickCounter = (clickButton, clickCounter, displayedClickCou
     })
 }
 
-const compounderButtonBuysCompounder = (clickCompounderButton, clickCounter, displayedClickCompounderCount) => {
+const compounderButtonBuysCompounder = (clickCompounderButton, clickCounter, displayedClickCompounderCount, displayedClickCount) => {
     clickCompounderButton.addEventListener('click', ()=> {
         clickCounter.buyClickCompounder();
         updateClickCompounderCount(displayedClickCompounderCount, clickCounter);
+        updateClickCompounderCost(displayedCompounderCost, clickCounter);
+        updateClickCount(displayedClickCount, clickCounter);
     })
 }
 
-const companionButtonBuysCompanionClicker = (clickCompanionButton, clickCounter, displayedClickCompanionCount)=> {
+const companionButtonBuysCompanionClicker = (clickCompanionButton, clickCounter, displayedClickCompanionCount, displayedClickCount)=> {
     clickCompanionButton.addEventListener('click', ()=>{
         clickCounter.buyCompanionClicker();
         updateClickCompanionCount(displayedClickCompanionCount, clickCounter);
+        updateClickCompanionCost(displayedCompanionCost, clickCounter);
+        setInterval(clickCounter.click(), 1000);
+        updateClickCount(displayedClickCount, clickCounter);
     })
 }
 
+
 makeButtonIntoClickCounter(clickButton, clickCounter, displayedClickCount);
-compounderButtonBuysCompounder(clickCompounderButton, clickCounter, displayedClickCompounderCount);
-companionButtonBuysCompanionClicker(clickCompanionButton, clickCounter, displayedClickCompanionCount);
+compounderButtonBuysCompounder(clickCompounderButton, clickCounter, displayedClickCompounderCount, displayedClickCount);
+companionButtonBuysCompanionClicker(clickCompanionButton, clickCounter, displayedClickCompanionCount, displayedClickCount);
+
+//*disable/enabling buttons not working
+//*auto-clicker not working
+//*compounder not working but i doubt i can even get that done anyway because its confusing
