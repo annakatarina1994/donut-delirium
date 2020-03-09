@@ -1,6 +1,6 @@
 class ClickCounter{
     constructor(){
-        this.clickCount = 100;
+        this.clickCount = 0;
         this.companionClickCount = 0;
         this.compounderClickCount = 0;
         this.companionCost = 100;

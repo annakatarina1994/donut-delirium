@@ -8,6 +8,12 @@ const displayedClickCompanionCount = document.querySelector(".clickCompanionCoun
 const displayedClickCompounderCount = document.querySelector(".clickCompounderCount");
 const displayedCompanionCost = document.querySelector(".companionCost");
 const displayedCompounderCost = document.querySelector(".compounderCost");
+const resetButton = document.querySelector(".resetButton");
+const companyInfo = document.querySelector(".companyInfo");
+
+resetButton.addEventListener('click', ()=>{
+    window.location.reload();
+})
 
 setInterval(()=>{
     for(i = 0; i < clickCounter.getCompanionClickCount(); i++){
@@ -20,7 +26,7 @@ setInterval(()=>{
 //this shit ain't working, please revisit************
 //is there a way to access clickCount variable another way?...
 const enableCompounderButton = (clickCompounderButton, clickCounter) =>{
-    if(clickCounter.getClickCount() < 10){
+    if(clickCounter.clickCount < 10){
         clickCompounderButton.disabled = true;
     }else{
         clickCompounderButton.disabled = false;
@@ -32,11 +38,11 @@ const updateClickCount = (displayedClickCount, clickCounter)=>{
 }
 
 const updateClickCompanionCount = (displayedClickCompanionCount, clickCounter)=> {
-    displayedClickCompanionCount.innerText = "Click Companion Count: " + clickCounter.getCompanionClickCount();
+    displayedClickCompanionCount.innerText = "Click Companions: " + clickCounter.getCompanionClickCount();
 }
 
 const updateClickCompounderCount = (displayedClickCompounderCount, clickCounter)=>{
-    displayedClickCompounderCount.innerText = "Click Compounder Count: " + clickCounter.getCompounderClickCount();
+    displayedClickCompounderCount.innerText = "Click Compounders: " + clickCounter.getCompounderClickCount();
 }
 
 const updateClickCompanionCost = (displayedCompanionCost, clickCounter) =>{
@@ -77,6 +83,3 @@ const companionButtonBuysCompanionClicker = (clickCompanionButton, clickCounter,
 makeButtonIntoClickCounter(clickButton, clickCounter, displayedClickCount);
 compounderButtonBuysCompounder(clickCompounderButton, clickCounter, displayedClickCompounderCount, displayedClickCount);
 companionButtonBuysCompanionClicker(clickCompanionButton, clickCounter, displayedClickCompanionCount, displayedClickCount);
-
-//*disable/enabling buttons not working
-//*compounder not working but i doubt i can even get that done anyway because its confusing

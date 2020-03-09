@@ -4,12 +4,33 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css?family=Fredoka+One&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="./src/css/style.css">
     <link rel="stylesheet" href="./src/css/layout.css">
     <title>Module 4 Project</title>
 </head>
 
 <body>
+    <h1 class="title">Donut Delirium</h1>
+    <div class="navBar">
+        <h4 id="companyInfo">Company Info
+            <div id="companyInfoPopUp">Brought to you by the Coo Coo <br>
+                Computing Challengers, a company<br>
+                that enjoys alliteration far more<br>
+                than anyone else. To a painful degree.</div>
+        </h4>
+        <h4 id="developer">The Developer
+            <div id="developerPopUp">A stressed out human that's tired of alliteration
+                <a href="https://annakatarina1994.github.io/"><br>Portfolio</a>
+                <a href="https://github.com/annakatarina1994"><br>GitHub</a>
+            </div>
+        </h4>
+   
+        <a href="https://orteil.dashnet.org/cookieclicker/" target="blank" id="cookieClickerLink">Cookie Clicker</a>
+        <button type="button" name="button" class="resetButton" value="Clear Results" id="resetButton">Reset
+            Game</button>
+    </div>
+
     <div class="body">
         <button type="button" name="button" class="clickButton"><img class="donutButton"
                 src="./src/donutButton.png"></button><br>
@@ -29,6 +50,7 @@
             <button type="button" name="button" class="clickCompanionButton">Buy Clicking Companion</button>
             <p class="clickCompanionCount">Click Companions: 0</p>
         </section>
+
     </div>
     <script src="/src/js/clickcounter.js"></script>
     <script src="/src/js/app.js"></script>
