@@ -9,6 +9,12 @@ const displayedClickCompounderCount = document.querySelector(".clickCompounderCo
 const displayedCompanionCost = document.querySelector(".companionCost");
 const displayedCompounderCost = document.querySelector(".compounderCost");
 
+setInterval(()=>{
+    for(i = 0; i < clickCounter.getCompanionClickCount(); i++){
+        clickCounter.click();
+        updateClickCount(displayedClickCount, clickCounter);
+    }
+}, 1000);
 
 //this shit ain't working, please revisit************
 //is there a way to access clickCount variable another way?...
@@ -61,7 +67,6 @@ const companionButtonBuysCompanionClicker = (clickCompanionButton, clickCounter,
         clickCounter.buyCompanionClicker();
         updateClickCompanionCount(displayedClickCompanionCount, clickCounter);
         updateClickCompanionCost(displayedCompanionCost, clickCounter);
-        setInterval(clickCounter.click(), 1000);
         updateClickCount(displayedClickCount, clickCounter);
     })
 }
@@ -72,5 +77,4 @@ compounderButtonBuysCompounder(clickCompounderButton, clickCounter, displayedCli
 companionButtonBuysCompanionClicker(clickCompanionButton, clickCounter, displayedClickCompanionCount, displayedClickCount);
 
 //*disable/enabling buttons not working
-//*auto-clicker not working
 //*compounder not working but i doubt i can even get that done anyway because its confusing
