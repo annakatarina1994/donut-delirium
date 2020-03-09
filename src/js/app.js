@@ -16,6 +16,14 @@ setInterval(()=>{
     }
 }, 1000);
 
+
+//i feel like i'll need this somewhere but i don't know where to put it
+for(i = 0; i < clickCounter.getCompounderClickCount(); i++){
+    clickCounter.compounderIncreasesClickValue();
+    updateClickCount(displayedClickCount, clickCounter);
+}
+
+
 //this shit ain't working, please revisit************
 //is there a way to access clickCount variable another way?...
 const enableCompounderButton = (clickCompounderButton, clickCounter) =>{
