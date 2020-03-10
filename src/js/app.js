@@ -9,7 +9,23 @@ const displayedClickCompounderCount = document.querySelector(".clickCompounderCo
 const displayedCompanionCost = document.querySelector(".companionCost");
 const displayedCompounderCost = document.querySelector(".compounderCost");
 const resetButton = document.querySelector(".resetButton");
-const companyInfo = document.querySelector(".companyInfo");
+const developer = document.querySelector("#developer");
+const developerModal = document.querySelector(".developerModal");
+const close = document.querySelector(".close");
+
+developer.addEventListener('click', ()=>{
+    developerModal.style.display = 'block';
+})
+
+close.addEventListener('click', ()=>{
+    developerModal.style.display = 'none';
+})
+
+window.addEventListener('click', (event)=>{
+    if(event.target == developerModal){
+        developerModal.style.display = 'none';
+    }
+})
 
 resetButton.addEventListener('click', ()=>{
     window.location.reload();
