@@ -1,0 +1,32 @@
+.title{
+    margin: 0 auto;
+}
+
+.navBar{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    /* justify-content: space-evenly; */
+}
+
+body{
+    text-align: center;
+}
+
+.section{
+    display: inline-block;
+}
+
+.clickButton{
+    padding: 0;
+    border: none;
+    background: none;
+}
+
+.donutButton{
+    padding: 1rem;
+    border: none;
+    background: none;
+    height: 9rem;
+    width: 9rem; 
+}
