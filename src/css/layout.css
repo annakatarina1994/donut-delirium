@@ -29,6 +29,8 @@ body{
 
 .clickCompounderButton{
   grid-column: 2;
+  width: 50%;
+  margin: auto;
 }
 
 .clickCompounderCount{
@@ -41,10 +43,20 @@ body{
   grid-template-columns: 33% 33% 33%;
 }
 
+.clickCompanionButton{
+  width: 50%;
+  margin: auto;
+}
+
 .clickButton{
     padding: 0;
     border: none;
     background: none;
+}
+
+.clickButton:focus{
+  border: none;
+  outline: none;
 }
 
 .donutButton{

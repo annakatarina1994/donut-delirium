@@ -18,8 +18,10 @@
     
 }
 
-.clickMe{
-    margin: 0 auto;
+.instructions{
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-size: 1rem;
+  color: rgb(0, 31, 170);
 }
 
 #companyInfo{
