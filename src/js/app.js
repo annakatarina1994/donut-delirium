@@ -62,7 +62,7 @@ const updateClickCompounderCount = (displayedClickCompounderCount, clickCounter)
 }
 
 const updateClickCompanionCost = (displayedCompanionCost, clickCounter) =>{
-    displayedCompanionCost.innerText = "You can buy a baker for " + clickCounter.getCompanionCost() + " donuts who will help you get even more donuts!"
+    displayedCompanionCost.innerText = "You can buy a baker for " + clickCounter.getCompanionCost() + " donuts who will help you make even more donuts!"
 }
 
 const updateClickCompounderCost = (displayedCompounderCost, clickCounter) =>{
