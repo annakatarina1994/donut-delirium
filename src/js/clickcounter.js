@@ -16,7 +16,7 @@ class ClickCounter{
         if(this.clickCount < 0){
            return this.clickCount = 0;
         }else{
-        return this.clickCount.toFixed(2);}
+        return this.clickCount.toFixed(0);}
     }
 
     getCompanionClickCount(){

@@ -2,69 +2,70 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="https://fonts.googleapis.com/css?family=Fredoka+One&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="./src/css/style.css">
-    <link rel="stylesheet" href="./src/css/layout.css">
-    <title>Module 4 Project</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://fonts.googleapis.com/css?family=Fredoka+One&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="./src/css/style.css">
+  <link rel="stylesheet" href="./src/css/layout.css">
+  <title>Module 4 Project</title>
 </head>
 
 <body>
-    <h1 class="title">Donut Delirium</h1>
-    <div class="navBar">
-        <h4 id="companyInfo">Company Info
-        <div id=companyInfoPopUp>This game is a product of Coo Coo<br>
-             Computing Challengers, where the<br>
-              turn over rate is exponential due<br>
-             to developers regularly admitting <br>
-             themselves into sanitariums. *Welcome<br> 
-             Home by Metallica starts playing<br>
-              in the distance*
-        </div>
+  <h1 class="title">Donut Delirium</h1>
+  <div class="navBar">
+    <h4 id="companyInfo">Company Info
+      <div id=companyInfoPopUp>This game is a product of Coo Coo<br>
+        Computing Challengers, where the<br>
+        turn over rate is exponential due<br>
+        to developers regularly admitting <br>
+        themselves into sanitariums. *Welcome<br>
+        Home by Metallica starts playing<br>
+        in the distance*
+      </div>
     </h4>
-        <h4 id="developer">The Developer</h4>
-        <div class="developerModal">
-            <div id="developerPopUp">
-                <span class="close">&times;</span>
-                <p class="developerContent">A stressed out human that's tired of alliteration.<br>
-                    Actively seeking new employment anywhere else.<br>
-                    Check out my portfolio and github!</p>
+    <h4 id="developer">The Developer</h4>
+    <div class="developerModal">
+      <div id="developerPopUp">
+        <span class="close">&times;</span>
+        <p class="developerContent">A stressed out human that's tired of alliteration.<br>
+          Actively seeking new employment anywhere else.<br>
+          Check out my portfolio and github!</p>
 
-                <a href="https://annakatarina1994.github.io/" target='blank'><br>Portfolio</a>
-                <a href="https://github.com/annakatarina1994" target='blank'><br>GitHub</a>
-            </div>
-        </div>
-
-
-        <a href="https://orteil.dashnet.org/cookieclicker/" target="blank" id="cookieClickerLink">Cookie Clicker</a>
-        <button type="button" name="button" class="resetButton" value="Clear Results" id="resetButton">Reset
-            Game</button>
+        <a href="https://annakatarina1994.github.io/" target='blank'><br>Portfolio</a>
+        <a href="https://github.com/annakatarina1994" target='blank'><br>GitHub</a>
+      </div>
     </div>
 
-    <div class="body">
-        <button type="button" name="button" class="clickButton"><img class="donutButton"
-                src="./src/donutButton.png"></button><br>
-        <div class="clickCount">Score: 0</div>
 
-        <section>
-            <p class="compounderCost">
-                You can buy a click compounder for 10 clicks.<br>
-            </p>
-            <button type="button" name="button" class="clickCompounderButton">Buy Click Compounder</button>
-            <p class="clickCompounderCount">Click Compounders: 0</p>
-        </section>
+    <a href="https://orteil.dashnet.org/cookieclicker/" target="blank" id="cookieClickerLink">Cookie Clicker</a>
+    <button type="button" name="button" class="resetButton" value="Clear Results" id="resetButton">Reset
+      Game</button>
+  </div>
 
-        <section>
-            <p class="companionCost">You can buy a clicking companion for 100 clicks.<br>
-            </p>
-            <button type="button" name="button" class="clickCompanionButton">Buy Clicking Companion</button>
-            <p class="clickCompanionCount">Click Companions: 0</p>
-        </section>
+  <div class="body">
+    <section>
+    <button type="button" name="button" class="clickButton"><img class="donutButton" src="./src/donutButton.png"></button><br>
+    <div class="clickCount">Donuts: 0</div>
+  </section>
 
-    </div>
-    <script src="/src/js/clickcounter.js"></script>
-    <script src="/src/js/app.js"></script>
+    <section>
+      <p class="compounderCost">
+        You can buy a cup of joe for 10 donuts. Every cup you buy makes your clicks worth more donuts!<br>
+      </p>
+      <button type="button" name="button" class="clickCompounderButton">Buy Click Compounder</button>
+      <p class="clickCompounderCount">Cups of Joe: 0</p>
+    </section>
+
+    <section>
+      <p class="companionCost">You can buy a baker for 100 donuts who will help you bake even more donuts!<br>
+      </p>
+      <button type="button" name="button" class="clickCompanionButton">Buy Baker</button>
+      <p class="clickCompanionCount">Bakers: 0</p>
+    </section>
+
+  </div>
+  <script src="/src/js/clickcounter.js"></script>
+  <script src="/src/js/app.js"></script>
 </body>
 
 </html>

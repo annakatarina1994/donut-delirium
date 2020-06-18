@@ -50,23 +50,23 @@ const enableCompounderButton = (clickCompounderButton, clickCounter) =>{
 }
 
 const updateClickCount = (displayedClickCount, clickCounter)=>{
-    displayedClickCount.innerText = "Score: " + clickCounter.getClickCount();
+    displayedClickCount.innerText = "Donuts: " + clickCounter.getClickCount();
 }
 
 const updateClickCompanionCount = (displayedClickCompanionCount, clickCounter)=> {
-    displayedClickCompanionCount.innerText = "Click Companions: " + clickCounter.getCompanionClickCount();
+    displayedClickCompanionCount.innerText = "Bakers: " + clickCounter.getCompanionClickCount();
 }
 
 const updateClickCompounderCount = (displayedClickCompounderCount, clickCounter)=>{
-    displayedClickCompounderCount.innerText = "Click Compounders: " + clickCounter.getCompounderClickCount();
+    displayedClickCompounderCount.innerText = "Cups of Joe: " + clickCounter.getCompounderClickCount();
 }
 
 const updateClickCompanionCost = (displayedCompanionCost, clickCounter) =>{
-    displayedCompanionCost.innerText = "You can buy a clicking companion for " + clickCounter.getCompanionCost() + " clicks."
+    displayedCompanionCost.innerText = "You can buy a baker for " + clickCounter.getCompanionCost() + " donuts who will help you get even more donuts!"
 }
 
 const updateClickCompounderCost = (displayedCompounderCost, clickCounter) =>{
-    displayedCompounderCost.innerText = "You can buy a click compounder for " +  clickCounter.getCompounderCost() + " clicks."
+    displayedCompounderCost.innerText = "You can buy a cup of joe for " +  clickCounter.getCompounderCost() + " donuts. Every cup you buy makes your clicks worth more donuts!"
 }
 
 const makeButtonIntoClickCounter = (clickButton, clickCounter, displayedClickCount)=>{
