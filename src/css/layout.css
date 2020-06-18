@@ -12,8 +12,33 @@ body{
     text-align: center;
 }
 
-.section{
-    display: inline-block;
+.body{
+ display: grid;
+ grid-template-rows: 50% 50%;
+}
+
+.compounderSection{
+  display: grid;
+  grid-row: 1;
+  grid-template-columns: 33% 33% 33%;
+}
+
+.compounderCost{
+  grid-column: 1;
+}
+
+.clickCompounderButton{
+  grid-column: 2;
+}
+
+.clickCompounderCount{
+  grid-column: 3;
+}
+
+.companionSection{
+  display: grid;
+  grid-row: 2;
+  grid-template-columns: 33% 33% 33%;
 }
 
 .clickButton{
