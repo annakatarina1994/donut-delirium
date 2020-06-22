@@ -14,6 +14,17 @@ const developerModal = document.querySelector(".developerModal");
 const close = document.querySelector(".close");
 const companionSection = document.querySelector(".companionSection");
 
+clickButton.disabled=false;
+clickCompounderButton.disabled=true;
+clickCompanionButton.disabled=true;
+
+
+const enableCompounderButton = () => {
+  if(displayedClickCount >= 10){
+    clickCompounderButton.disabled=false;
+  }
+}
+
 developer.addEventListener('click', ()=>{
     developerModal.style.display = 'block';
 })
@@ -38,14 +49,6 @@ setInterval(()=>{
         updateClickCount(displayedClickCount, clickCounter);
     }
 }, 1000);
-
-const enableCompounderButton = (clickCompounderButton, clickCounter) =>{
-    if(clickCounter.clickCount < 10){
-        clickCompounderButton.disabled = true;
-    }else{
-        clickCompounderButton.disabled = false;
-    }
-}
 
 const updateClickCount = (displayedClickCount, clickCounter)=>{
     displayedClickCount.innerText = "Donuts: " + clickCounter.getClickCount();
@@ -84,19 +87,26 @@ const compounderButtonBuysCompounder = (clickCompounderButton, clickCounter, dis
     })
 }
 
+// const companionButtonCreatesBaker = ()=>{
+//   if(displayedClickCount < 10){
+//     button.disabled=true;
+//   }else{
+//     const baker = document.createElement('div');
+//     baker.classList.add('bakerImage');
+//     const testContent = document.createTextNode("POOP");
+//     baker.appendChild(testContent);
+//     companionSection.appendChild(baker);
+  
+// }
+
 const companionButtonBuysCompanionClicker = (clickCompanionButton, clickCounter, displayedClickCompanionCount, displayedClickCount)=> {
     clickCompanionButton.addEventListener('click', ()=>{
-        let bakerImage = document.createElement("div");
-        let testContent = document.createTextNode("HELLO IS THIS WORKING");
-        bakerImage.appendChild(testContent);
-        companionSection.appendChild(bakerImage);
         clickCounter.buyCompanionClicker();
         updateClickCompanionCount(displayedClickCompanionCount, clickCounter);
         updateClickCompanionCost(displayedCompanionCost, clickCounter);
         updateClickCount(displayedClickCount, clickCounter);
     })
 }
-
 
 makeButtonIntoClickCounter(clickButton, clickCounter, displayedClickCount);
 compounderButtonBuysCompounder(clickCompounderButton, clickCounter, displayedClickCompounderCount, displayedClickCount);
