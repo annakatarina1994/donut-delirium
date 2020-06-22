@@ -12,6 +12,7 @@ const resetButton = document.querySelector(".resetButton");
 const developer = document.querySelector("#developer");
 const developerModal = document.querySelector(".developerModal");
 const close = document.querySelector(".close");
+const companionSection = document.querySelector(".companionSection");
 
 developer.addEventListener('click', ()=>{
     developerModal.style.display = 'block';
@@ -85,6 +86,10 @@ const compounderButtonBuysCompounder = (clickCompounderButton, clickCounter, dis
 
 const companionButtonBuysCompanionClicker = (clickCompanionButton, clickCounter, displayedClickCompanionCount, displayedClickCount)=> {
     clickCompanionButton.addEventListener('click', ()=>{
+        let bakerImage = document.createElement("div");
+        let testContent = document.createTextNode("HELLO IS THIS WORKING");
+        bakerImage.appendChild(testContent);
+        companionSection.appendChild(bakerImage);
         clickCounter.buyCompanionClicker();
         updateClickCompanionCount(displayedClickCompanionCount, clickCounter);
         updateClickCompanionCost(displayedCompanionCost, clickCounter);
