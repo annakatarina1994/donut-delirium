@@ -14,14 +14,15 @@ const developerModal = document.querySelector(".developerModal");
 const close = document.querySelector(".close");
 const companionSection = document.querySelector(".companionSection");
 
-clickButton.disabled=false;
-clickCompounderButton.disabled=true;
-clickCompanionButton.disabled=true;
+clickButton.setAttribute('disabled', false);
 
-
+//not working...need to figure out how to enable this button only when there are 
+// enough donut clicks
 const enableCompounderButton = () => {
   if(displayedClickCount >= 10){
-    clickCompounderButton.disabled=false;
+    clickCompounderButton.setAttribute('disabled', true)
+  }else{
+    clickCompounderButton.disabled=true;
   }
 }
 
