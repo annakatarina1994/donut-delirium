@@ -14,13 +14,11 @@ const developerModal = document.querySelector(".developerModal");
 const close = document.querySelector(".close");
 const companionSection = document.querySelector(".companionSection");
 
-clickButton.setAttribute('disabled', false);
+clickButton.disabled=false;
 
-//not working...need to figure out how to enable this button only when there are 
-// enough donut clicks
-const enableCompounderButton = () => {
+const enableCompounderButton = (clickCompounderButton, displayedClickCount)=> {
   if(displayedClickCount >= 10){
-    clickCompounderButton.setAttribute('disabled', true)
+    clickCompounderButton.disabled=false;
   }else{
     clickCompounderButton.disabled=true;
   }
@@ -78,8 +76,18 @@ const makeButtonIntoClickCounter = (clickButton, clickCounter, displayedClickCou
     })
 }
 
+const compounderButtonCreatesCoffee = (companionSection)=>{
+    const coffee = document.createElement('div');
+    coffee.classList.add('coffeeImage');
+    const testContent = document.createTextNode("COFFEE");
+    coffee.appendChild(testContent);
+    companionSection.appendChild(coffee);
+}
+
 const compounderButtonBuysCompounder = (clickCompounderButton, clickCounter, displayedClickCompounderCount, displayedClickCount) => {
     clickCompounderButton.addEventListener('click', ()=> {
+      enableCompounderButton(clickCompounderButton, displayedClickCount);
+        compounderButtonCreatesCoffee(companionSection);
         clickCounter.buyClickCompounder();
         clickCounter.compounderIncreasesClickValue();
         updateClickCompounderCount(displayedClickCompounderCount, clickCounter);
@@ -87,18 +95,6 @@ const compounderButtonBuysCompounder = (clickCompounderButton, clickCounter, dis
         updateClickCount(displayedClickCount, clickCounter);
     })
 }
-
-// const companionButtonCreatesBaker = ()=>{
-//   if(displayedClickCount < 10){
-//     button.disabled=true;
-//   }else{
-//     const baker = document.createElement('div');
-//     baker.classList.add('bakerImage');
-//     const testContent = document.createTextNode("POOP");
-//     baker.appendChild(testContent);
-//     companionSection.appendChild(baker);
-  
-// }
 
 const companionButtonBuysCompanionClicker = (clickCompanionButton, clickCounter, displayedClickCompanionCount, displayedClickCount)=> {
     clickCompanionButton.addEventListener('click', ()=>{
@@ -108,6 +104,7 @@ const companionButtonBuysCompanionClicker = (clickCompanionButton, clickCounter,
         updateClickCount(displayedClickCount, clickCounter);
     })
 }
+
 
 makeButtonIntoClickCounter(clickButton, clickCounter, displayedClickCount);
 compounderButtonBuysCompounder(clickCompounderButton, clickCounter, displayedClickCompounderCount, displayedClickCount);
