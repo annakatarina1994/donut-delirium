@@ -38,9 +38,6 @@ setInterval(()=>{
     }
 }, 1000);
 
-
-//this shit ain't working, please revisit************
-//is there a way to access clickCount variable another way?...
 const enableCompounderButton = (clickCompounderButton, clickCounter) =>{
     if(clickCounter.clickCount < 10){
         clickCompounderButton.disabled = true;
