@@ -51,6 +51,14 @@ class ClickCounter{
         return this.compounderClickCount;
     }
 
+    enableCompounderButton(){
+      if(this.clickCount >= 10){
+        clickCompounderButton.disabled=false;
+      }else{
+        clickCompounderButton.disabled=true;
+      }
+    }
+
     buyClickCompounder(){
         if(this.clickCount >= 10){
             this.compounderClickCount++;

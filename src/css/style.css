@@ -143,6 +143,10 @@
     cursor: pointer;
 }
 
+.clickCompounderButton:focus{
+  outline: none;
+}
+
 .clickCompanionButton{
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
     font-size: 1rem;
@@ -156,3 +160,6 @@
     cursor: pointer;
 }
 
+.clickCompanionButton:focus{
+  outline: none;
+}

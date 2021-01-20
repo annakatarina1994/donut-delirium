@@ -12,6 +12,17 @@ const resetButton = document.querySelector(".resetButton");
 const developer = document.querySelector("#developer");
 const developerModal = document.querySelector(".developerModal");
 const close = document.querySelector(".close");
+const companionSection = document.querySelector(".companionSection");
+
+clickButton.disabled=false;
+
+const enableCompounderButton = (clickCompounderButton, displayedClickCount)=> {
+  if(displayedClickCount >= 10){
+    clickCompounderButton.disabled=false;
+  }else{
+    clickCompounderButton.disabled=true;
+  }
+}
 
 developer.addEventListener('click', ()=>{
     developerModal.style.display = 'block';
@@ -38,6 +49,7 @@ setInterval(()=>{
     }
 }, 1000);
 
+<<<<<<< HEAD
 
 //this shit ain't working, please revisit************
 //is there a way to access clickCount variable another way?...
@@ -49,6 +61,8 @@ const enableCompounderButton = (clickCompounderButton, clickCounter) =>{
     }
 }
 
+=======
+>>>>>>> 1c3559c98e2f68e14ee387e4e3cd9163f0039780
 const updateClickCount = (displayedClickCount, clickCounter)=>{
     displayedClickCount.innerText = "Donuts: " + clickCounter.getClickCount();
 }
@@ -76,8 +90,18 @@ const makeButtonIntoClickCounter = (clickButton, clickCounter, displayedClickCou
     })
 }
 
+const compounderButtonCreatesCoffee = (companionSection)=>{
+    const coffee = document.createElement('div');
+    coffee.classList.add('coffeeImage');
+    const testContent = document.createTextNode("COFFEE");
+    coffee.appendChild(testContent);
+    companionSection.appendChild(coffee);
+}
+
 const compounderButtonBuysCompounder = (clickCompounderButton, clickCounter, displayedClickCompounderCount, displayedClickCount) => {
     clickCompounderButton.addEventListener('click', ()=> {
+      enableCompounderButton(clickCompounderButton, displayedClickCount);
+        compounderButtonCreatesCoffee(companionSection);
         clickCounter.buyClickCompounder();
         clickCounter.compounderIncreasesClickValue();
         updateClickCompounderCount(displayedClickCompounderCount, clickCounter);
